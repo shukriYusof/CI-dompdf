@@ -1,0 +1,16 @@
+{
+    "name": "skytrex/CI-dompdf",
+    "type": "library",
+    "description": "This package for all codeigniter user who is using composer to install dependecies dompdf",
+    "keywords": ["composer","codeigniter","dompdf","pdf"],
+    "homepage": "https://www.sekolahcode.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shukri Yusof",
+            "email": "shuk.yusof@gmail.com",
+            "homepage": "http://www.travelover.live/",
+            "role": "Author"
+        }
+    ]
+}
