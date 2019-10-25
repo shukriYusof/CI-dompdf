@@ -185,16 +185,16 @@ class FontMetrics
 
         $fontDir = $this->getOptions()->getFontDir();
         $remoteHash = md5($remoteFile);
-        $localFile = $fontDir . DIRECTORY_SEPARATOR . $remoteHash;
+        $localFile = $fontDir . '/' . $remoteHash;
 
         $cacheEntry = $localFile;
-        $localFile .= ".".strtolower(pathinfo(parse_url($remoteFile, PHP_URL_PATH),PATHINFO_EXTENSION));
+        $localFile .= ".".strtolower(pathinfo(parse_url($remoteFile, PHP_URL_PATH), PATHINFO_EXTENSION));
 
         $entry[$styleString] = $cacheEntry;
 
         // Download the remote file
         list($remoteFileContent, $http_response_header) = @Helpers::getFileContent($remoteFile, $context);
-        if (false === $remoteFileContent) {
+        if (empty($remoteFileContent)) {
             return false;
         }
 
@@ -437,19 +437,25 @@ class FontMetrics
      */
     public function getType($type)
     {
-        if (preg_match("/bold/i", $type)) {
-            if (preg_match("/italic|oblique/i", $type)) {
-                $type = "bold_italic";
-            } else {
-                $type = "bold";
-            }
-        } elseif (preg_match("/italic|oblique/i", $type)) {
-            $type = "italic";
+        if (preg_match('/bold/i', $type)) {
+            $weight = 700;
+        } elseif (preg_match('/([1-9]00)/', $type, $match)) {
+            $weight = (int)$match[0];
         } else {
-            $type = "normal";
+            $weight = 400;
+        }
+        $weight = $weight === 400 ? 'normal' : $weight;
+        $weight = $weight === 700 ? 'bold' : $weight;
+
+        $style = preg_match('/italic|oblique/i', $type) ? 'italic' : null;
+
+        if ($weight === 'normal' && $style !== null) {
+            return $style;
         }
 
-        return $type;
+        return $style === null
+            ? $weight
+            : $weight.'_'.$style;
     }
 
     /**
@@ -495,7 +501,7 @@ class FontMetrics
      */
     public function getCacheFile()
     {
-        return $this->getOptions()->getFontDir() . DIRECTORY_SEPARATOR . self::CACHE_FILE;
+        return $this->getOptions()->getFontDir() . '/' . self::CACHE_FILE;
     }
 
     /**
