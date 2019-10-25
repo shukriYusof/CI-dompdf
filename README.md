@@ -1,6 +1,6 @@
-<h2> How to install </h4>
+##How to install 
 
-`composer require skytrex/ci-dompdf 0.0.4`
+    composer require skytrex/ci-dompdf 0.0.4
 <br>
 -<b>versioning is depends on the release </b>
 <hr>
@@ -8,7 +8,7 @@
 
 <h4>1. Create a pdf.php file in folder <b> application/libraries/pdf.php </b> </h4> 
 
-```
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -35,20 +35,16 @@ class pdf {
 
 <h4>2. Add pdf.php to your <b> application/autoload </b> and add file to your helper </h4>
 
-```
-
+```php
 $autoload['libraries'] = array('pdf');
 
 $autoload['helper'] = array('file');
-
 ```
 
 <h4>3. Change <b>composer autoload</b> in <b>config.php</b> to below. </h4>
 
-```
-
+```php
 $config['composer_autoload'] = FCPATH .'vendor/autoload.php';
-
 ```
 
 <h4>4. Enjoy!! </h4>
