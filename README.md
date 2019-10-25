@@ -1,3 +1,8 @@
+# ci-dompdf
+[![Latest Stable Version](https://poser.pugx.org/skytrex/ci-dompdf/v/stable)](https://packagist.org/packages/skytrex/ci-dompdf)
+[![Total Downloads](https://poser.pugx.org/skytrex/ci-dompdf/downloads)](https://packagist.org/packages/skytrex/ci-dompdf)
+[![Latest Unstable Version](https://poser.pugx.org/skytrex/ci-dompdf/v/unstable)](https://packagist.org/packages/skytrex/ci-dompdf)
+[![License](https://poser.pugx.org/skytrex/ci-dompdf/license)](https://packagist.org/packages/skytrex/ci-dompdf)
 ## How to install 
 
     composer require skytrex/ci-dompdf 0.0.4
