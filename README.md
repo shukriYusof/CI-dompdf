@@ -8,7 +8,7 @@
 
 #### 1. Create a pdf.php file in folder **application/libraries/pdf.php**.
 
-~~~~{.php}
+```php
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -31,7 +31,7 @@ class pdf {
     }
   }
 }
-~~~~
+```
 
 #### 2. Add pdf.php to your **application/autoload** and add file to your helper.
 
