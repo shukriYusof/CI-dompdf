@@ -1,5 +1,5 @@
 {
-    "name": "skytrex/CI-dompdf",
+    "name": "skytrex/ci-dompdf",
     "type": "library",
     "description": "This package for all codeigniter user who is using composer to install dependecies dompdf",
     "keywords": ["composer","codeigniter","dompdf","pdf"],
