@@ -4,9 +4,9 @@
 <br>
 -<b>versioning is depends on the release </b>
 <hr>
-<h2> How to use this with Codeigniter 3 </h4>
+##How to use this with Codeigniter 3.
 
-<h4>1. Create a pdf.php file in folder <b> application/libraries/pdf.php </b> </h4> 
+####1. Create a pdf.php file in folder <b> application/libraries/pdf.php </b>.
 
 ```php
 <?php
@@ -33,7 +33,7 @@ class pdf {
 }
 ```
 
-<h4>2. Add pdf.php to your <b> application/autoload </b> and add file to your helper </h4>
+####2. Add pdf.php to your <b> application/autoload </b> and add file to your helper.
 
 ```php
 $autoload['libraries'] = array('pdf');
@@ -41,10 +41,10 @@ $autoload['libraries'] = array('pdf');
 $autoload['helper'] = array('file');
 ```
 
-<h4>3. Change <b>composer autoload</b> in <b>config.php</b> to below. </h4>
+####3. Change <b>composer autoload</b> in <b>config.php</b> to below.
 
 ```php
 $config['composer_autoload'] = FCPATH .'vendor/autoload.php';
 ```
 
-<h4>4. Enjoy!! </h4>
+####4. Enjoy!!
