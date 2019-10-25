@@ -3,9 +3,9 @@
     composer require skytrex/ci-dompdf 0.0.4
 
 -**versioning is depends on the release**
----
+------
 ## How to use this with Codeigniter 3.
-
+------
 #### 1. Create a pdf.php file in folder **application/libraries/pdf.php**.
 
 ```php
